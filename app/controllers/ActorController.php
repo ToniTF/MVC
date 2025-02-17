@@ -10,9 +10,9 @@ class ActorController extends Controller
     }
     public function new(...$params)
     {
-        if(isset($_POST["first_name"])){//Si se ha recibido un nombre
-            echo "Se ha recibido un nuevo actor";
-    }else{
+    if(isset($_POST["first_name"])){//Si se ha recibido un nombre
+        echo "Se ha recibido un nuevo actor";
+    } else {
         $this->view("new_actor");
     }
     }
