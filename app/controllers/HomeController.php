@@ -1,7 +1,8 @@
 <?php
-class HomeController{
+require_once("./core/Controller.php");
+class HomeController extends Controller{
  public function index(){
-     echo "Hola desde INdex de HomeController";
+     echo "Hola desde Index de HomeController";
  }
 public function new(){
     echo "Hola desde NEW de HomeController";
