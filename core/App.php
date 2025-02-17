@@ -1,4 +1,6 @@
 <?php
+namespace Formacom\core;
+use Formacom\core\Controller;
 class App{
     protected $controller="HomeController";
     protected $method="index";

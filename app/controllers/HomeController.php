@@ -1,4 +1,5 @@
 <?php
+namespace Formacom\controllers;
 require_once("./core/Controller.php");
 class HomeController extends Controller
 {

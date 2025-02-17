@@ -1,4 +1,6 @@
 <?php
+namespace Formacom\controllers;
+
 require_once("./core/Controller.php");
 class ActorController extends Controller
 {
