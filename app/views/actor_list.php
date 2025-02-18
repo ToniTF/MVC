@@ -7,5 +7,11 @@
 </head>
 <body>
 <h1>Lista de Actores</h1>
+<?php
+    foreach($data as $actor){
+        echo "<p>".$actor->first_name." ".$actor->last_name."</p>";
+    }
+    ?>
 </body>
+
 </html>
