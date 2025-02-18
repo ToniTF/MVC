@@ -1,7 +1,6 @@
 <?php
 require_once("./config/database.php");
-
-use Formacom\core\App;
+use Formacom\Core\App;
 
 $app=new App();
 
