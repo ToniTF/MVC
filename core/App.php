@@ -1,8 +1,7 @@
 <?php
-namespace Formacom\core;
-use Formacom\core\Controller;
+namespace Formacom\Core;
 class App{
-    protected $controller="HomeController";
+    protected $controller="Formacom\\Controllers\\HomeController";
     protected $method="index";
     protected $params=[];
 
@@ -11,10 +10,9 @@ class App{
        
          // Verificar el controlador
          if(file_exists('./app/controllers/' . ucfirst($url[0]) . 'Controller.php')) {
-            $this->controller = ucfirst($url[0]) . 'Controller';
+            $this->controller = "Formacom\\Controllers\\".ucfirst($url[0]) . 'Controller';
             unset($url[0]);
         }
-        require_once './app/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
          // Verificar el método
@@ -29,11 +27,12 @@ class App{
            call_user_func_array([$this->controller, $this->method], $this->params);
     }
     
+
     private function parseUrl() {
         if(isset($_GET['url'])) {
             return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
         }
-        return ['home'];
+        return ['home','index'];
     }
 }
 ?>
