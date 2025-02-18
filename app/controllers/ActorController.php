@@ -1,19 +1,20 @@
 <?php
 namespace Formacom\controllers;
+use Formacom\Core\Controller;
 
-require_once("./core/Controller.php");
-class ActorController extends Controller
-{
-    public function index(...$params)
-    { //los tres puntos indican que se recibirá un número variable de parámetros
-        echo "Hola desde Index de ActorController";
+class ActorController extends Controller{
+    public function index(...$params){
+        echo "hola desde index de ActorController";
     }
-    public function new(...$params)
-    {
-    if(isset($_POST["first_name"])){//Si se ha recibido un nombre
-        echo "Se ha recibido un nuevo actor";
-    } else {
-        $this->view("new_actor");
+    public function new(...$params){
+        if(isset($_POST["first_name"])){
+            var_dump($_POST);
+            exit();
+        }else{
+            $this->view("new_actor"); 
+        }
+       
     }
-    }
+
 }
+?>
